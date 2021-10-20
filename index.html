@@ -27,26 +27,55 @@
             <div class="card text-light bg-dark p-4" style="width: 400px">
               <p class="m-0 p-0">You have:</p>
               <div class="d-flex">
-                <h3 class="fw-bold mt-1">0.00</h3>
-                <small class="fw-light mt-1 ms-1 py-2">USDC</small>
+                <h3 class="fw-bold mt-1" id="usdcBalance">0.00</h3>
+                <small class="fw-light mt-1 ms-1 py-2" id="contractName"
+                  >USDC</small
+                >
               </div>
               <div class="mt-3">
-                <small class="bg-light text-muted p-2 px-3 rounded-pill"
+                <small
+                  class="
+                    bg-light
+                    text-muted text-lowercase
+                    p-2
+                    px-3
+                    rounded-pill
+                  "
+                  id="userAddress"
                   >0x..add-here</small
                 >
               </div>
             </div>
+            <p class="card-text mt-3 d-none">
+              visit <a href="mint-usdc.html">here</a> to mint usdc
+            </p>
           </div>
-          <div class="mt-5">
+          <div class="mt-4">
             <h5 class="fw-bold">Transfer Usdt</h5>
-            <form class="mt-4" action="">
+            <div
+              class="alert alert-info mt-2"
+              id="transferResponse"
+              style="display: none"
+            >
+              Lorem ipsum dolor sit amet.
+            </div>
+            <form
+              class="mt-4"
+              id="transferForm"
+              onsubmit="event.preventDefault(); transferUsdc();"
+            >
               <div class="form-group">
                 <label for="receiver">Receivers address</label>
-                <input type="text" id="receiver" class="form-control" />
+                <input
+                  type="text"
+                  id="receiver"
+                  class="form-control"
+                  required
+                />
               </div>
               <div class="form-group mt-3">
                 <label for="amount">Amount</label>
-                <input type="text" id="amount" class="form-control" />
+                <input type="text" id="amount" class="form-control" required />
               </div>
               <div class="form-group mt-3">
                 <button class="btn btn-success w-100" type="submit">
@@ -64,4 +93,5 @@
     type="application/javascript"
   ></script>
   <script src="./script/app.js"></script>
+  <script src="./script/transfer-usdc.js"></script>
 </html>
